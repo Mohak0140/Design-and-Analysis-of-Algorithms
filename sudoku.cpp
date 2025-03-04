@@ -1,12 +1,11 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <math.h>  // Include math.h for sqrt()
+#include <math.h> 
 
 #define MAX_N 25
 
 int N;
 
-// Function to check if a number can be placed in a given cell
 bool isSafe(int grid[MAX_N][MAX_N], int row, int col, int num) {
     for (int x = 0; x < N; x++) {
         if (grid[row][x] == num || grid[x][col] == num) {
@@ -32,7 +31,7 @@ bool isSafe(int grid[MAX_N][MAX_N], int row, int col, int num) {
     return true;
 }
 
-// Function to solve Sudoku using backtracking
+
 bool solveSudoku(int grid[MAX_N][MAX_N]) {
     int row, col;
     bool emptyCell = false;
@@ -60,7 +59,7 @@ bool solveSudoku(int grid[MAX_N][MAX_N]) {
     return false;
 }
 
-// Function to print the solved Sudoku grid
+
 void printGrid(int grid[MAX_N][MAX_N]) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
@@ -70,7 +69,7 @@ void printGrid(int grid[MAX_N][MAX_N]) {
     }
 }
 
-// Main function
+
 int main() {
     printf("Enter the size of the board (must be a perfect square, e.g., 4, 9, 16): ");
     scanf("%d", &N);
